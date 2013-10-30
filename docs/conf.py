@@ -31,11 +31,11 @@ autodoc_member_order = 'bysource'
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'rst2pdf.pdfbuilder',
-    'sphinxcontrib.plantuml',
+#    'rst2pdf.pdfbuilder',
+#    'sphinxcontrib.plantuml',
     'nailgun.autoapidoc'
 ]
-plantuml = ['java','-jar','plantuml.jar']
+#plantuml = ['java','-jar','plantuml.jar']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
