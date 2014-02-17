@@ -543,6 +543,38 @@
     operating_system: "CentOS"
     description: "This option will install the OpenStack Havana packages using a CentOS based operating system. With high availability features built in, you are getting a robust, enterprise-grade OpenStack deployment."
     attributes_metadata:
+      editable:
+        vcenter:
+          use_vcenter:
+            value: false
+            label: "Use VMware vCenter as hypervisor"
+            description: ""
+            weight: 5
+            type: "checkbox"
+          user:
+            value: "admin"
+            label: "username"
+            description: "vCenter Username"
+            weight: 20
+            type: "text"
+          host_ip:
+            value: ""
+            label: "vCenter IP"
+            description: ""
+            weight: 10
+            type: "text"
+          cluster:
+            value: "cluster1"
+            label: "cluster"
+            description: "vCenter cluster name"
+            weight: 40
+            type: "text"
+          password:
+            value: "admin"
+            label: "password"
+            description: "vCenter Password"
+            weight: 30
+            type: "password"
       generated:
         cobbler:
           profile:
