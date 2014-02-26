@@ -543,6 +543,10 @@
     operating_system: "CentOS"
     description: "This option will install the OpenStack Havana packages using a CentOS based operating system. With high availability features built in, you are getting a robust, enterprise-grade OpenStack deployment."
     attributes_metadata:
+      generated:
+        cobbler:
+          profile:
+            generator_arg: "centos-x86_64"
       editable:
         vcenter:
           use_vcenter:
@@ -575,11 +579,6 @@
             description: "vCenter Password"
             weight: 30
             type: "password"
-      generated:
-        cobbler:
-          profile:
-            generator_arg: "centos-x86_64"
-      editable:
         common:
           vlan_splinters:
             value: "disabled"
