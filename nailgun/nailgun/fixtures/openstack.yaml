@@ -556,7 +556,7 @@
             weight: 5
             type: "checkbox"
           user:
-            value: "admin"
+            value: "Administrator@vsphere.local"
             label: "username"
             description: "vCenter Username"
             weight: 20
