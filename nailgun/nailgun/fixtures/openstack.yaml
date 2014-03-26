@@ -195,6 +195,9 @@
               - data: "qemu"
                 label: "QEMU"
                 description: "Choose this type of hypervisor if you run OpenStack on virtual hosts."
+              - data: "vcenter"
+                label: "VCENTER"
+                description: "Choose this type of hypervisor if you run OpenStack in a vCenter environment."
             label: "Hypervisor type"
             weight: 30
             type: "radio"

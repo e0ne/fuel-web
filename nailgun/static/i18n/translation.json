@@ -365,14 +365,16 @@
                     "compute": {
                         "title": "Compute",
                         "kvm_description": "Choose this type of hypervisor if you run OpenStack on hardware",
-                        "qemu_description": "Choose this type of hypervisor if you run OpenStack on virtual hosts"
+                        "qemu_description": "Choose this type of hypervisor if you run OpenStack on virtual hosts",
+                        "vcenter_description": "Choose this type of hypervisor if you run OpenStack in a vCenter environment."
                     },
                     "network": {
                         "title": "Network",
                         "alert": "Neutron is not supported in __releaseName__",
                         "nova_network": "Nova-Network",
                         "neutr_gre": "Neutron with GRE segmentation",
-                        "neutr_vlan": "Neutron with VLAN segmentation"
+                        "neutr_vlan": "Neutron with VLAN segmentation",
+                        "neutr_nsx": "Neutron with Nicira NSX plugin"
                     },
                     "storage": {
                         "title": "Storage Backends",
