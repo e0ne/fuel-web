@@ -613,12 +613,6 @@
           libvirt_type:
             value: "vcenter"
             values:
-              - data: "kvm"
-                label: "KVM"
-                description: "Choose this type of hypervisor if you run OpenStack on hardware"
-              - data: "qemu"
-                label: "QEMU"
-                description: "Choose this type of hypervisor if you run OpenStack on virtual hosts."
               - data: "vcenter"
                 label: "VCENTER"
                 description: "Choose this type of hypervisor if you run OpenStack in a vCenter environment."
