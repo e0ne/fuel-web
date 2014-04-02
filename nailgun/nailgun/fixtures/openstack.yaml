@@ -600,3 +600,60 @@
         cobbler:
           profile:
             generator_arg: "ubuntu_1204_x86_64"
+- pk: 4
+  extend: *full_release
+  fields:
+    name: "Icehouse on CentOS 6.5"
+    version: "2014.4.17"
+    operating_system: "CentOS"
+    description: "This option will install the OpenStack Icehouse packages using a CentOS based operating system. With high availability features built in, you are getting a       robust, enterprise-grade OpenStack deployment wich vCenter support."
+    attributes_metadata:
+      editable:
+        access:
+          libvirt_type:
+            value: "vcenter"
+            values:
+              - data: "kvm"
+                label: "KVM"
+                description: "Choose this type of hypervisor if you run OpenStack on hardware"
+              - data: "qemu"
+                label: "QEMU"
+                description: "Choose this type of hypervisor if you run OpenStack on virtual hosts."
+              - data: "vcenter"
+                label: "VCENTER"
+                description: "Choose this type of hypervisor if you run OpenStack in a vCenter environment."
+        vcenter:
+          use_vcenter:
+            value: true 
+            label: "Use VMware vCenter as hypervisor"
+            description: ""
+            weight: 5
+            type: "checkbox"
+          vc_user:
+            value: "Administrator@vsphere.local"
+            label: "username"
+            description: "vCenter Username"
+            weight: 20
+            type: "text"
+          host_ip:
+            value: ""
+            label: "vCenter IP"
+            description: ""
+            weight: 10
+            type: "text"
+          cluster:
+            value: "cluster1"
+            label: "cluster"
+            description: "vCenter cluster name"
+            weight: 40
+            type: "text"
+          vc_password:
+            value: "admin"
+            label: "password"
+            description: "vCenter Password"
+            weight: 30
+            type: "password"
+      generated:
+        cobbler:
+          profile:
+            generator_arg: "centos-x86_64"
