@@ -400,7 +400,7 @@ function(require, utils, models, simpleMessageTemplate, createClusterWizardTempl
 
     clusterWizardPanes.ClusterNetworkPane = views.WizardPane.extend({
         title: 'dialog.create_cluster_wizard.network.title',
-        deps: [clusterWizardPanes.ClusterNameAndReleasePane],
+        deps: [clusterWizardPanes.ClusterNameAndReleasePane, clusterWizardPanes.ClusterComputePane],
         template: _.template(clusterNetworkPaneTemplate),
         events: {
             'change input[name=manager]': 'onManagerChange'
@@ -432,11 +432,15 @@ function(require, utils, models, simpleMessageTemplate, createClusterWizardTempl
         render: function() {
             var release = this.wizard.findPane(clusterWizardPanes.ClusterNameAndReleasePane).release;
             var disabledDueToRelease = !release || release.get('operating_system') == 'RHEL'; // no Neutron for RHOS for now
+            var disableDueToHypervisorType = this.wizard.findPane(clusterWizardPanes.ClusterComputePane).hypervisor == 'vcenter'; // no Neutron for vCenter
             this.$el.html(this.template({
                 disabledDueToRelease: disabledDueToRelease,
                 release: release
             })).i18n();
             if (disabledDueToRelease) {
+                this.$('input[value^=neutron]').prop('disabled', true);
+            }
+            if (disableDueToHypervisorType) {
                 this.$('input[value^=neutron]').prop('disabled', true);
             }
             this.$('input[name=manager]:first').prop('checked', true);
